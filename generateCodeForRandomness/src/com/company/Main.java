@@ -12,8 +12,8 @@ public class Main {
         BufferedReader asciiReader = new BufferedReader(new FileReader(ascii));
         BufferedReader colorReader = new BufferedReader(new FileReader(color));
         File template_js = new File("template/template_js.txt");
-        File outputHtml = new File("output/html.txt");
-        File outputJs = new File("output/js.txt");
+        File outputHtml = new File("output/index.html");
+        File outputJs = new File("output/index.js");
         FileReader fr = new FileReader(template);
         FileWriter outputHtmlFr = new FileWriter(outputHtml);
         FileWriter outputJsFr = new FileWriter(outputJs);
@@ -28,7 +28,7 @@ public class Main {
         bufferedWriter.append("\n");
         bufferedWriter.append(colorReader.readLine());
         bufferedWriter.append("\n");
-        for (int j = 0; j < 5000; j++) {
+        for (int j = 0; j < 5; j++) {
             template_js_reader = new FileReader(template_js);
             bufferedReader = new BufferedReader(template_js_reader);
             while (bufferedReader.ready()) {
@@ -37,7 +37,7 @@ public class Main {
             }
         }
 
-        for (int i = 0; i < 5000; i++) {
+        for (int i = 0; i < 5; i++) {
             outputHtmlFr.write(stringBuilder.toString().replace(TEMPLATE, Integer.toString(i)));
         }
         fr.close();

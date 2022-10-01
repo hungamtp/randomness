@@ -1,34 +1,32 @@
-const text%number = document.getElementById("text%number");
-text%number.innerHTML =  number[0];
-function textF%number ( ){
-  let a =Math.random() < 0.5;
-  let b =Math.random() > 0.5;
-  if(a){
-    if(b){
-      let valueXIncrease = text%number.cx["animVal"].value +1;
-      text%number.style.cx = valueXIncrease;
-      text%number.setAttribute("cx" , valueXIncrease);
+const text%number = document.getElementById('text%number');
+text%number.innerHTML = number[0];
+function textF%number() {
+  let a = Math.random() < 0.5;
+  let b = Math.random() > 0.5;
+  if (a) {
+    if (b) {
+      let valueXIncrease = text%number.x['animVal'][0].value + 1;
+      text%number.style.x = valueXIncrease;
+      text%number.setAttribute('x', valueXIncrease);
       text%number.innerHTML = number[0];
-    }else{
-      let valueXIncrease = text%number.cx["animVal"].value -1;
-      text%number.style.cx = valueXIncrease;
-      text%number.setAttribute("cx" , valueXIncrease);
+    } else {
+      let valueXIncrease = text%number.x['animVal'][0].value - 1;
+      text%number.style.x = valueXIncrease;
+      text%number.setAttribute('x', valueXIncrease);
       text%number.innerHTML = number[1];
     }
-  }else{
-    if(b){
-      let valueXIncrease = text%number.cy["animVal"].value +1;
-      text%number.style.cy = valueXIncrease;
-      text%number.setAttribute("cy" , valueXIncrease);
+  } else {
+    if (b) {
+      let valueXIncrease = text%number.y['animVal'][0].value + 1;
+      text%number.style.y = valueXIncrease;
+      text%number.setAttribute('y', valueXIncrease);
       text%number.innerHTML = number[2];
-    }else{
-      let valueXIncrease = text%number.cy["animVal"].value -1;
-      text%number.style.cy = valueXIncrease;
-      text%number.setAttribute("cy" , valueXIncrease);
-      text%number.innerHTML =number[3];
+    } else {
+      let valueXIncrease = text%number.y['animVal'][0].value - 1;
+      text%number.style.y = valueXIncrease;
+      text%number.setAttribute('y', valueXIncrease);
+      text%number.innerHTML = number[3];
     }
   }
 }
-setInterval(textF%number , 0.0001)
-
-
+setInterval(textF%number, 0.0001);
