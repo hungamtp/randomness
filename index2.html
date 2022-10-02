@@ -9,7 +9,18 @@
   </head>
   <body>
     <svg id="center">
-      <circle id="text" cx="50%" cy="50%" r="40" stroke="black" stroke-width="3" fill="white" />
+      <text id="text48" x="50%" y="50%" fill="white" style="font-size: 10px">hung</text>
     </svg>
+    <script>
+      const color = ['white', 'red', 'blue', 'pink', 'black'];
+      function changeColor() {
+        const text = document.getElementById('text48');
+        const newColor = color[Math.floor((Math.random() * 10) % 5)];
+        console.log(newColor);
+        text.setAttribute('fill', newColor);
+        text.fill = newColor;
+      }
+      setInterval(changeColor, 100);
+    </script>
   </body>
 </html>

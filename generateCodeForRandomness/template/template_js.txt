@@ -3,29 +3,31 @@ text%number.innerHTML = number[0];
 function textF%number() {
   let a = Math.random() < 0.5;
   let b = Math.random() > 0.5;
+  const newColor = color[Math.floor((Math.random() * 10) % 5)];
+  text%number.setAttribute('fill', newColor);
   if (a) {
     if (b) {
       let valueXIncrease = text%number.x['animVal'][0].value + 1;
       text%number.style.x = valueXIncrease;
       text%number.setAttribute('x', valueXIncrease);
-      text%number.innerHTML = number[0];
+      text%number.innerHTML = valueXIncrease;
     } else {
       let valueXIncrease = text%number.x['animVal'][0].value - 1;
       text%number.style.x = valueXIncrease;
       text%number.setAttribute('x', valueXIncrease);
-      text%number.innerHTML = number[1];
+      text%number.innerHTML = valueXIncrease;
     }
   } else {
     if (b) {
       let valueXIncrease = text%number.y['animVal'][0].value + 1;
       text%number.style.y = valueXIncrease;
       text%number.setAttribute('y', valueXIncrease);
-      text%number.innerHTML = number[2];
+      text%number.innerHTML = valueXIncrease;
     } else {
       let valueXIncrease = text%number.y['animVal'][0].value - 1;
       text%number.style.y = valueXIncrease;
       text%number.setAttribute('y', valueXIncrease);
-      text%number.innerHTML = number[3];
+      text%number.innerHTML = valueXIncrease;
     }
   }
 }

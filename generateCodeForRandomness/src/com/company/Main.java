@@ -28,7 +28,7 @@ public class Main {
         bufferedWriter.append("\n");
         bufferedWriter.append(colorReader.readLine());
         bufferedWriter.append("\n");
-        for (int j = 0; j < 5; j++) {
+        for (int j = 0; j < 1000; j++) {
             template_js_reader = new FileReader(template_js);
             bufferedReader = new BufferedReader(template_js_reader);
             while (bufferedReader.ready()) {
@@ -37,7 +37,7 @@ public class Main {
             }
         }
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 1000; i++) {
             outputHtmlFr.write(stringBuilder.toString().replace(TEMPLATE, Integer.toString(i)));
         }
         fr.close();
