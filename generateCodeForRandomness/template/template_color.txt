@@ -1,1 +1,1 @@
-const color = [ 'red', 'blue', 'brown' , 'black']; const location1 = new Map();
+const color = [ 'red', 'blue', 'brown' , 'black', 'black']; const location1 = new Map();

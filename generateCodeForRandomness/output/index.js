@@ -1,5 +1,5 @@
 const number = ['▊', '▊', '▊', '▊'];
-const color = [ 'red', 'blue', 'brown' , 'black']; const location1 = new Map();
+const color = [ 'red', 'blue', 'brown' , 'black', 'black']; const location1 = new Map();
 const text0 = document.getElementById('text0');
 text0.innerHTML = number[0];
 function textF0() {
@@ -8,14 +8,14 @@ const svg = document.getElementById('center');
   let b = Math.random() > 0.5;
   const newColor = color[Math.floor((Math.random() * 10) % 5)];
   text0.setAttribute('fill', newColor);
-  svg.setAttribute('background-color', newColor);
   if (!location1.get(text0.x['animVal'][0].value+""+text0.y['animVal'][0].value)) {
     const shadow = document.createElementNS('http://www.w3.org/2000/svg', 'text');
     shadow.setAttribute('x', text0.x['animVal'][0].value);
+    shadow.setAttribute('id', text0.x['animVal'][0].value+""+text0.y['animVal'][0].value);
     shadow.setAttribute('y', text0.y['animVal'][0].value);
     shadow.setAttribute('style', 'font-size:5px');
     shadow.setAttribute('fill', newColor);
-    shadow.append('▊');
+    shadow.append('↑');
     document.getElementById('center').append(shadow);
     location1.set(text0.x['animVal'][0].value+""+text0.y['animVal'][0].value, true);
   }
@@ -58,14 +58,14 @@ const svg = document.getElementById('center');
   let b = Math.random() > 0.5;
   const newColor = color[Math.floor((Math.random() * 10) % 5)];
   text1.setAttribute('fill', newColor);
-  svg.setAttribute('background-color', newColor);
   if (!location1.get(text1.x['animVal'][0].value+""+text1.y['animVal'][0].value)) {
     const shadow = document.createElementNS('http://www.w3.org/2000/svg', 'text');
     shadow.setAttribute('x', text1.x['animVal'][0].value);
+    shadow.setAttribute('id', text1.x['animVal'][0].value+""+text1.y['animVal'][0].value);
     shadow.setAttribute('y', text1.y['animVal'][0].value);
     shadow.setAttribute('style', 'font-size:5px');
     shadow.setAttribute('fill', newColor);
-    shadow.append('▊');
+    shadow.append('↑');
     document.getElementById('center').append(shadow);
     location1.set(text1.x['animVal'][0].value+""+text1.y['animVal'][0].value, true);
   }
@@ -108,14 +108,14 @@ const svg = document.getElementById('center');
   let b = Math.random() > 0.5;
   const newColor = color[Math.floor((Math.random() * 10) % 5)];
   text2.setAttribute('fill', newColor);
-  svg.setAttribute('background-color', newColor);
   if (!location1.get(text2.x['animVal'][0].value+""+text2.y['animVal'][0].value)) {
     const shadow = document.createElementNS('http://www.w3.org/2000/svg', 'text');
     shadow.setAttribute('x', text2.x['animVal'][0].value);
+    shadow.setAttribute('id', text2.x['animVal'][0].value+""+text2.y['animVal'][0].value);
     shadow.setAttribute('y', text2.y['animVal'][0].value);
     shadow.setAttribute('style', 'font-size:5px');
     shadow.setAttribute('fill', newColor);
-    shadow.append('▊');
+    shadow.append('↑');
     document.getElementById('center').append(shadow);
     location1.set(text2.x['animVal'][0].value+""+text2.y['animVal'][0].value, true);
   }
@@ -158,14 +158,14 @@ const svg = document.getElementById('center');
   let b = Math.random() > 0.5;
   const newColor = color[Math.floor((Math.random() * 10) % 5)];
   text3.setAttribute('fill', newColor);
-  svg.setAttribute('background-color', newColor);
   if (!location1.get(text3.x['animVal'][0].value+""+text3.y['animVal'][0].value)) {
     const shadow = document.createElementNS('http://www.w3.org/2000/svg', 'text');
     shadow.setAttribute('x', text3.x['animVal'][0].value);
+    shadow.setAttribute('id', text3.x['animVal'][0].value+""+text3.y['animVal'][0].value);
     shadow.setAttribute('y', text3.y['animVal'][0].value);
     shadow.setAttribute('style', 'font-size:5px');
     shadow.setAttribute('fill', newColor);
-    shadow.append('▊');
+    shadow.append('↑');
     document.getElementById('center').append(shadow);
     location1.set(text3.x['animVal'][0].value+""+text3.y['animVal'][0].value, true);
   }
@@ -208,14 +208,14 @@ const svg = document.getElementById('center');
   let b = Math.random() > 0.5;
   const newColor = color[Math.floor((Math.random() * 10) % 5)];
   text4.setAttribute('fill', newColor);
-  svg.setAttribute('background-color', newColor);
   if (!location1.get(text4.x['animVal'][0].value+""+text4.y['animVal'][0].value)) {
     const shadow = document.createElementNS('http://www.w3.org/2000/svg', 'text');
     shadow.setAttribute('x', text4.x['animVal'][0].value);
+    shadow.setAttribute('id', text4.x['animVal'][0].value+""+text4.y['animVal'][0].value);
     shadow.setAttribute('y', text4.y['animVal'][0].value);
     shadow.setAttribute('style', 'font-size:5px');
     shadow.setAttribute('fill', newColor);
-    shadow.append('▊');
+    shadow.append('↑');
     document.getElementById('center').append(shadow);
     location1.set(text4.x['animVal'][0].value+""+text4.y['animVal'][0].value, true);
   }
