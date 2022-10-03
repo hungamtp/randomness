@@ -6,16 +6,20 @@ const svg = document.getElementById('center');
   let b = Math.random() > 0.5;
   const newColor = color[Math.floor((Math.random() * 10) % 5)];
   text%number.setAttribute('fill', newColor);
-  if (!location1.get(text%number.x['animVal'][0].value+""+text%number.y['animVal'][0].value)) {
+  const id = text%number.x['animVal'][0].value+""+text%number.y['animVal'][0].value;
+  if (!location1.get(id)) {
     const shadow = document.createElementNS('http://www.w3.org/2000/svg', 'text');
     shadow.setAttribute('x', text%number.x['animVal'][0].value);
-    shadow.setAttribute('id', text%number.x['animVal'][0].value+""+text%number.y['animVal'][0].value);
+    shadow.setAttribute('id', id);
     shadow.setAttribute('y', text%number.y['animVal'][0].value);
     shadow.setAttribute('style', 'font-size:5px');
     shadow.setAttribute('fill', newColor);
-    shadow.append('↑');
+    shadow.append('○');
     document.getElementById('center').append(shadow);
-    location1.set(text%number.x['animVal'][0].value+""+text%number.y['animVal'][0].value, true);
+    location1.set(id, true);
+  }else{
+  svg.removeChild(document.getElementById(id));
+            location1.delete(id);
   }
   if (a) {
     if (b) {
@@ -47,4 +51,4 @@ const svg = document.getElementById('center');
     }
   }
 }
-setInterval(textF%number, 0.0001);
+setInterval(textF%number, 0.001);
