@@ -6,44 +6,52 @@ public class Main {
     public static final String TEMPLATE = "%number";
 
     public static void main(String[] args) throws IOException {
-        File template = new File("template/template.txt");
-        File color = new File("template/template_color.txt");
-        File ascii = new File("template/template_ascii.txt");
-        BufferedReader asciiReader = new BufferedReader(new FileReader(ascii));
-        BufferedReader colorReader = new BufferedReader(new FileReader(color));
-        File template_js = new File("template/template_js.txt");
-        File outputHtml = new File("output/index.html");
-        File outputJs = new File("output/index.js");
-        FileReader fr = new FileReader(template);
-        FileWriter outputHtmlFr = new FileWriter(outputHtml);
-        FileWriter outputJsFr = new FileWriter(outputJs);
-        FileReader template_js_reader = null;
-        BufferedWriter bufferedWriter = new BufferedWriter(outputJsFr);
-        BufferedReader bufferedReader = null;
-        StringBuilder stringBuilder = new StringBuilder("");
-        while (fr.ready()) {
-            stringBuilder.append(Character.toChars(fr.read()));
-        }
-        bufferedWriter.append(asciiReader.readLine());
-        bufferedWriter.append("\n");
-        bufferedWriter.append(colorReader.readLine());
-        bufferedWriter.append("\n");
+        BufferedReader footerReader = new BufferedReader(new FileReader("template/footer.txt"));
+        BufferedReader asciiReader = new BufferedReader(new FileReader("template/template_ascii.txt"));
+        BufferedReader colorReader = new BufferedReader(new FileReader("template/template_color.txt"));
+        BufferedReader elementReader = new BufferedReader(new FileReader("template/template.txt"));
+        BufferedReader headerReader = new BufferedReader(new FileReader("template/header.txt"));
+        BufferedWriter jsWriter = new BufferedWriter(new FileWriter("output/index.js"));
+        BufferedWriter htmlWriter = new BufferedWriter(new FileWriter("output/index.html"));
+        BufferedReader jsReader = null;
+
+        jsWriter.append(asciiReader.readLine());
+        jsWriter.append("\n");
+        jsWriter.append(colorReader.readLine());
+        jsWriter.append("\n");
         for (int j = 0; j < 1000; j++) {
-            template_js_reader = new FileReader(template_js);
-            bufferedReader = new BufferedReader(template_js_reader);
-            while (bufferedReader.ready()) {
-                bufferedWriter.append(bufferedReader.readLine().replace(TEMPLATE, Integer.toString(j)));
-                bufferedWriter.append("\n");
+            jsReader = new BufferedReader(new FileReader("template/template_js.txt"));
+            while (jsReader.ready()) {
+                jsWriter.append(jsReader.readLine().replace(TEMPLATE, Integer.toString(j)));
+                jsWriter.append("\n");
             }
         }
 
-        for (int i = 0; i < 1000; i++) {
-            outputHtmlFr.write(stringBuilder.toString().replace(TEMPLATE, Integer.toString(i)));
+        // write to html
+        //header
+        while (headerReader.ready()) {
+            htmlWriter.append(headerReader.readLine());
+            htmlWriter.append("\n");
         }
-        fr.close();
-        outputHtmlFr.close();
-        template_js_reader.close();
-        bufferedReader.close();
-        bufferedWriter.close();
+        htmlWriter.write("\n");
+        //write body svg
+        String element = elementReader.readLine();
+        for (int i = 0; i < 1000; i++) {
+            htmlWriter.append(element.replace(TEMPLATE, Integer.toString(i)));
+            htmlWriter.append("\n");
+        }
+        //write footer
+        while (footerReader.ready()) {
+            htmlWriter.append(footerReader.readLine());
+            htmlWriter.append("\n");
+        }
+        elementReader.close();
+        colorReader.close();
+        asciiReader.close();
+        footerReader.close();
+        headerReader.close();
+        htmlWriter.close();
+        jsWriter.close();
+        jsReader.close();
     }
 }
