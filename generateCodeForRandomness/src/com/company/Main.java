@@ -19,7 +19,7 @@ public class Main {
         jsWriter.append("\n");
         jsWriter.append(colorReader.readLine());
         jsWriter.append("\n");
-        for (int j = 0; j < 1000; j++) {
+        for (int j = 0; j < 100; j++) {
             jsReader = new BufferedReader(new FileReader("template/template_js.txt"));
             while (jsReader.ready()) {
                 jsWriter.append(jsReader.readLine().replace(TEMPLATE, Integer.toString(j)));
@@ -36,7 +36,7 @@ public class Main {
         htmlWriter.write("\n");
         //write body svg
         String element = elementReader.readLine();
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 100; i++) {
             htmlWriter.append(element.replace(TEMPLATE, Integer.toString(i)));
             htmlWriter.append("\n");
         }
