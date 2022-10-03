@@ -7,24 +7,24 @@ function textF%number() {
   text%number.setAttribute('fill', newColor);
   if (a) {
     if (b) {
-      let valueXIncrease = text%number.x['animVal'][0].value + 1;
+      let valueXIncrease = text%number.x['animVal'][0].value + 5;
       text%number.style.x = valueXIncrease;
       text%number.setAttribute('x', valueXIncrease);
       text%number.innerHTML = valueXIncrease;
     } else {
-      let valueXIncrease = text%number.x['animVal'][0].value - 1;
+      let valueXIncrease = text%number.x['animVal'][0].value - 5;
       text%number.style.x = valueXIncrease;
       text%number.setAttribute('x', valueXIncrease);
       text%number.innerHTML = valueXIncrease;
     }
   } else {
     if (b) {
-      let valueXIncrease = text%number.y['animVal'][0].value + 1;
+      let valueXIncrease = text%number.y['animVal'][0].value + 5;
       text%number.style.y = valueXIncrease;
       text%number.setAttribute('y', valueXIncrease);
       text%number.innerHTML = valueXIncrease;
     } else {
-      let valueXIncrease = text%number.y['animVal'][0].value - 1;
+      let valueXIncrease = text%number.y['animVal'][0].value - 5;
       text%number.style.y = valueXIncrease;
       text%number.setAttribute('y', valueXIncrease);
       text%number.innerHTML = valueXIncrease;
