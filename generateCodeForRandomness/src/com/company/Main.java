@@ -3,7 +3,7 @@ package com.company;
 import java.io.*;
 
 public class Main {
-    public static final String TEMPLATE = "%number";
+    public static final String TEMPLATE = "IndexNumber";
 
     public static void main(String[] args) throws IOException {
         BufferedReader footerReader = new BufferedReader(new FileReader("template/footer.txt"));
@@ -19,8 +19,8 @@ public class Main {
         jsWriter.append("\n");
         jsWriter.append(colorReader.readLine());
         jsWriter.append("\n");
-        for (int j = 0; j < 100; j++) {
-            jsReader = new BufferedReader(new FileReader("template/template_js.txt"));
+        for (int j = 0; j < 1000; j++) {
+            jsReader = new BufferedReader(new FileReader("template/template_js.js"));
             while (jsReader.ready()) {
                 jsWriter.append(jsReader.readLine().replace(TEMPLATE, Integer.toString(j)));
                 jsWriter.append("\n");
@@ -36,7 +36,7 @@ public class Main {
         htmlWriter.write("\n");
         //write body svg
         String element = elementReader.readLine();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 1000; i++) {
             htmlWriter.append(element.replace(TEMPLATE, Integer.toString(i)));
             htmlWriter.append("\n");
         }

@@ -1,1 +1,1 @@
-<text id="text%number" x="50%" y="50%" fill="white" style="font-size:10px"></text>
+<text id="textIndexNumber" x="50%" y="50%" fill="white" style="font-size:10px"></text>
